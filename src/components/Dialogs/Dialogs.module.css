@@ -12,6 +12,11 @@
     padding: 10px;
 }
 
+.dialogsItems img {
+    width: 80px;
+    border-radius: 35px;
+}
+
 
 .messages .message {
 
