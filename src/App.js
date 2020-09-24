@@ -3,9 +3,9 @@ import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
-import {addPost} from "./redux/store";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 
 
@@ -19,12 +19,10 @@ const App = (props) => {
             <Header/>
             <Navbar/>
             <div className='app-wrapper-content'>
-                <Route path='/messages' render={ () => <Dialogs store = {props.store} />}/>
+                <Route path='/messages' render={ () => <DialogsContainer store = {props.store} />}/>
                 <Route path='/profile' render={ () => <Profile
-                    state={props.appstate.profilePage}
-                    dispatch={props.dispatch}
-
-                />}/>
+                    store = {props.store}/>}/>
+                <Route path='/users' render={ () => <UsersContainer/>}/>
 
             </div>
 
