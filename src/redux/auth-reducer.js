@@ -4,6 +4,7 @@ let initialstate= {
     userId: null,
     email: null,
     login: null,
+    isAuth: false,
 
 
 
@@ -17,7 +18,8 @@ const authReducer = (state = initialstate, action) => {
 
             return {
                 ...state,
-                ...action.data
+                ...action.data,
+                isAuth: true,
 
             };
         default:
